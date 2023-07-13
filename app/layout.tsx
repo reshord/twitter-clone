@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import NavigationSidebar from './components/navigationSidebar'
+import SearchSidebar from './components/searchSidebar'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        {children}
+        <div className="w-4/5 h-screen m-auto ">
+          <div className='flex justify-between'>
+            <NavigationSidebar />
+              {children}
+            <SearchSidebar />
+          </div>
+        </div>
       </body>
     </html>
   )
