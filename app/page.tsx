@@ -1,11 +1,29 @@
-import Header from "./components/Header";
+'use client'
+import { useState } from "react";
+import Header from "./components/header";
 
 export default function Home() {
 
+  const [currentMethod, setCurrentMethod] = useState<number>(0)
+  const [methods, setMethods] = useState<string[]>(['For you', 'Following'])
+
   return (
-    <div className="w-2/3">
-            <Header title="Home" />
-            content  
+    <div className="w-1/2 border-x-indigo-500" >
+          <Header 
+          onClickMethod={(index) => setCurrentMethod(index)} 
+          currentMethod={currentMethod} 
+          methods={methods} title="Home" />
+          <div className="h-screen">
+            {currentMethod === 0 ? (
+              <div>
+                for me
+              </div>
+            ) : (
+              <div>
+                follow
+              </div>
+            )}
+          </div>
       </div>
   )
 }

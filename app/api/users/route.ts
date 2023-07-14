@@ -4,6 +4,6 @@ export async function GET(req: Request) {
         {username: "oleg"},
         {username: "vika"}
     ]
-    
-    return new Response(JSON.stringify(users))
+
+    return new Response()
 }

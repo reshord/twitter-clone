@@ -5,6 +5,8 @@ import {AiOutlineSearch} from 'react-icons/ai'
 import {CgProfile} from 'react-icons/cg'
 import SidebarLogo from './sidebarLogo';
 import SidebarItem from './sidebarItem';
+import TweetButton from './tweetButton';
+import SidebarProfile from './sidebarProfile';
 
 const NavigationSidebar = () => {
 
@@ -33,15 +35,17 @@ const NavigationSidebar = () => {
     ]
 
     return ( 
-        <div className='flex flex-col justify-between pt-3'>
-            <div>
+        <div className='flex flex-col h-screen justify-between py-3 w-1/6'>
+            <div className='sticky'>
                 <SidebarLogo />
+                <div className='my-6'>
+                    {sibarItems.map(item => (
+                        <SidebarItem icon={item.icon} label={item.label} url={item.url}/>
+                    ))}
+                </div>
+                <TweetButton />
             </div>
-            <div className='mt-4'>
-                {sibarItems.map(item => (
-                    <SidebarItem icon={item.icon} label={item.label} url={item.url}/>
-                ))}
-            </div>
+            <SidebarProfile />
         </div>
      );
 }
