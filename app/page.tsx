@@ -1,6 +1,7 @@
 'use client'
 import { useState } from "react";
 import Header from "./components/header";
+import ForMeContent from "./components/forMeContent";
 
 export default function Home() {
 
@@ -10,13 +11,14 @@ export default function Home() {
   return (
     <div className="w-1/2 border-x-indigo-500" >
           <Header 
-          onClickMethod={(index) => setCurrentMethod(index)} 
-          currentMethod={currentMethod} 
-          methods={methods} title="Home" />
+            onClickMethod={(index) => setCurrentMethod(index)} 
+            currentMethod={currentMethod} 
+            methods={methods} title="Home" 
+          />
           <div className="h-screen">
             {currentMethod === 0 ? (
               <div>
-                for me
+                <ForMeContent />
               </div>
             ) : (
               <div>
