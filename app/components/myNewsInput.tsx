@@ -7,6 +7,10 @@ const MyNewsInput = () => {
     const inputBlockRef = useRef<HTMLInputElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
 
+    const myProfile = {
+        avatar: 'https://i.ibb.co/fDNyK87/image.png'
+    }
+
     const sendTweet = () => {
 
     }
@@ -18,10 +22,13 @@ const MyNewsInput = () => {
     }, []);
 
     return ( 
-        <div className="w-full h-48  p-5" ref={inputBlockRef}>
+        <div 
+            className="w-full h-40 p-5 flex flex-col justify-between" 
+            ref={inputBlockRef}
+        >
             <div className="flex w-1/2" >
                 <div className="rounded-full mr-4">
-                    avatar
+                    <img className="rounded-full w-10" src={myProfile.avatar} alt="" />
                 </div>
                 <input 
                     ref={inputRef}
@@ -31,7 +38,7 @@ const MyNewsInput = () => {
                     onChange={(e) => setInputValue(e.target.value)}
                 />
             </div>
-            <div className="m-4">
+            <div className="">
                 <button 
                     style={{backgroundColor: 'rgb(29, 155, 240)'}} 
                     className="py-1 px-4 rounded-full text-lg font-medium text-white cursor-pointer " 

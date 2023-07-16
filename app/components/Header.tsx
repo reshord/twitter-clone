@@ -23,7 +23,9 @@ const Header: React.FC<HeaderProps> = ({title, onClickMethod, methods, currentMe
     }
 
     return ( 
-        <div className="w-full flex flex-col sticky top-0 z-40 bg-white">
+        <div 
+            style={{backgroundColor: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(12px)'}} 
+            className="w-full flex flex-col sticky top-0 z-40 ">
             <div className="font-bold text-xl my-3">
                 <span>{title}</span>
             </div>
@@ -32,8 +34,11 @@ const Header: React.FC<HeaderProps> = ({title, onClickMethod, methods, currentMe
                     <span
                         key={index} 
                         onClick={() => onClickMethod(index)}
-                        style={{backgroundColor: `${currentMethod === index ? 'rgb(156 163 175)' : ''}`}} 
-                        className=" hover:bg-gray-300 transition w-2/4 text-center font-bold py-3 cursor-pointer"
+                        style={{
+                            backgroundColor: `${currentMethod === index ? 'rgb(239, 243, 244)' : ''}`
+                            
+                        }} 
+                        className=" hover:bg-gray-200 transition w-2/4 text-center font-bold py-3 cursor-pointer"
                     >
                         {el}
                     </span>

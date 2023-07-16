@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image';
 import {BsTwitter} from 'react-icons/bs'
 import {BiHomeCircle, BiLogOut} from 'react-icons/bi'
@@ -39,8 +41,8 @@ const NavigationSidebar = () => {
             <div className='sticky'>
                 <SidebarLogo />
                 <div className='my-6'>
-                    {sibarItems.map(item => (
-                        <SidebarItem icon={item.icon} label={item.label} url={item.url}/>
+                    {sibarItems.map((item, index) => (
+                        <SidebarItem key={index} icon={item.icon} label={item.label} url={item.url}/>
                     ))}
                 </div>
                 <TweetButton />
