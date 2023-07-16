@@ -12,6 +12,10 @@ import SidebarProfile from './sidebarProfile';
 
 const NavigationSidebar = () => {
 
+    const currentUser = {
+        name: 'Reshord'
+    }
+
     const sibarItems = [
         {
             label: 'Home',
@@ -26,7 +30,7 @@ const NavigationSidebar = () => {
         {
             label: 'Profile',
             icon: CgProfile,
-            url: '/profile'
+            url: `/profile/${currentUser.name}`
         },
         {
             label: 'Logout',
@@ -35,6 +39,8 @@ const NavigationSidebar = () => {
         },
        
     ]
+
+    
 
     return ( 
         <div className='flex flex-col h-screen justify-between py-3 w-1/6'>

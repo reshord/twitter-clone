@@ -1,27 +1,15 @@
 'use client'
+import ProfileHeader from "@/app/components/profileHeader";
+import SearchInput from "@/app/components/searchInput";
 import { useParams } from "next/navigation";
-
-const getUsers = async () => {
-    const data = await fetch('/api/users', {
-        method: 'GET'
-    })
-
-    return data.json()
-}
 
 const ProfilePage = () => {
 
     const params = useParams()
 
-    const users = getUsers()
-
-    console.log(users)
-
-
     return ( 
-        <div>
-            <button>click</button>
-            {params.username}
+        <div className="w-2/5">
+            <ProfileHeader />
         </div>
      );
 }
