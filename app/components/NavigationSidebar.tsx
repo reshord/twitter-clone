@@ -43,10 +43,10 @@ const NavigationSidebar = () => {
     
 
     return ( 
-        <div className='flex flex-col h-screen justify-between py-3 w-1/6'>
-            <div className='sticky'>
+        <div className='flex flex-col justify-between py-3 w-1/6 h-screen'>
+            <div className=''>
                 <SidebarLogo />
-                <div className='my-6'>
+                <div className='my-6 '>
                     {sibarItems.map((item, index) => (
                         <SidebarItem key={index} icon={item.icon} label={item.label} url={item.url}/>
                     ))}

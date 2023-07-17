@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="">
-        <div className="w-4/5 h-screen m-auto ">
+        <div className="w-4/5 m-auto ">
           <div className='flex justify-between'>
             <NavigationSidebar />
               {children}

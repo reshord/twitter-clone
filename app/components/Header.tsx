@@ -24,7 +24,11 @@ const Header: React.FC<HeaderProps> = ({title, onClickMethod, methods, currentMe
 
     return ( 
         <div 
-            style={{backgroundColor: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(12px)'}} 
+            style={{
+                backgroundColor: 'rgba(255, 255, 255, 0.85)', 
+                backdropFilter: 'blur(12px)',
+                border: '1px solid rgb(239, 243, 244)'
+            }} 
             className="w-full flex flex-col sticky top-0 z-40 ">
             <div className="font-bold text-xl my-3">
                 <span>{title}</span>

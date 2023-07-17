@@ -23,6 +23,7 @@ const MyNewsInput = () => {
 
     return ( 
         <div 
+            style={{border: '1px solid rgb(239, 243, 244)'}}
             className="w-full h-40 p-5 flex flex-col justify-between" 
             ref={inputBlockRef}
         >

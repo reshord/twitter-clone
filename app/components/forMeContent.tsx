@@ -11,7 +11,11 @@ const ForMeContent = () => {
             avatar: 'https://i.ibb.co/3krfKQK/image.png', 
             createdAt: '30', 
             postTextContent: 'All eyes on the ball', 
-            image: ''
+            image: '',
+            comments: 9,
+            reposts: 24,
+            likes: 120,
+            view: 200
         },
         {
             postId: 2,
@@ -20,7 +24,11 @@ const ForMeContent = () => {
             avatar: 'https://i.ibb.co/sv1z9KB/image.png', 
             createdAt: '40', 
             postTextContent: 'Great to have you back', 
-            image: ''
+            image: '',
+            comments: 19,
+            reposts: 44,
+            likes: 40,
+            view: 400
         },
         {
             postId: 3,
@@ -29,7 +37,11 @@ const ForMeContent = () => {
             avatar: 'https://i.ibb.co/yX9WMCZ/image.png', 
             createdAt: '50', 
             postTextContent: '🚨 West Ham are interested in signing Harry Maguire.', 
-            image: ''
+            image: '',
+            comments: 119,
+            reposts: 244,
+            likes: 240,
+            view: 3300
         },
         {
             postId: 4,
@@ -38,7 +50,11 @@ const ForMeContent = () => {
             avatar: 'https://i.ibb.co/vwbq4Sy/image.png', 
             createdAt: '36', 
             postTextContent: '🚨 Luton Town hope to get a thumbs up from #mufc to land goalkeeper Tom Heaton, who could be allowed to leave once United have added new signings in that department. [@SunSport]', 
-            image: ''
+            image: '',
+            comments: 129,
+            reposts: 244,
+            likes: 430,
+            view: 4400
         },
         {
             postId: 5,
@@ -46,14 +62,20 @@ const ForMeContent = () => {
             username: 'United Radar', 
             avatar: 'https://i.ibb.co/VJ9QhXQ/image.png', 
             createdAt: '8', 
-            postTextContent: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"'
+            postTextContent: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"',
+            replies: 219,
+            reposts: 244,
+            likes: 240,
+            view: 700
         },
     ]
 
     return ( 
         <div className="flex flex-col">
             <MyNewsInput />
-            <div>
+            <div 
+                className=" flex flex-col"
+            >
                 {posts.map(post => (
                     <ContentPost 
                         key={post.postId}
@@ -64,6 +86,10 @@ const ForMeContent = () => {
                         image={post.image} 
                         postTextContent={post.postTextContent} 
                         createdAt={post.createdAt}
+                        replies={post.replies}
+                        views={post.view}
+                        reposts={post.reposts}
+                        likes={post.likes}
                     />
                 ))}
             </div>

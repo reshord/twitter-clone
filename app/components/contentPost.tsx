@@ -1,4 +1,11 @@
-import Image from "next/image"
+'use client'
+
+import { useState } from "react"
+import {FaRegComment} from 'react-icons/fa'
+import {BiRepost} from 'react-icons/bi'
+import {AiOutlineHeart} from 'react-icons/ai'
+import {VscGraph} from 'react-icons/vsc'
+import { useRouter } from "next/navigation"
 
 interface ContentPostProps {
     avatar: string
@@ -8,6 +15,10 @@ interface ContentPostProps {
     image?: string | string[]
     postTextContent: string
     postId: number
+    replies: number | undefined
+    reposts: number | undefined
+    likes: number | undefined
+    views: number | undefined
 }
 
 const ContentPost: React.FC<ContentPostProps> = (
@@ -18,12 +29,28 @@ const ContentPost: React.FC<ContentPostProps> = (
         createdAt, 
         postTextContent,
         image,
-        postId
+        postId,
+        replies,
+        reposts,
+        likes,
+        views
     }) => {
 
+    const [isHovered, setIsHovered] = useState<boolean>(false)
+    const router = useRouter()
+
     return ( 
-        <div className="flex flex-col mt-2 cursor-pointer">
-            <div className="flex ">
+        <div 
+            onClick={() => router.push(`/reshord/status/${postId}`)}
+            style={{
+                backgroundColor: `${isHovered ? 'rgba(0,0,0,0.03)' : ''}`,
+                border: '1px solid rgb(239, 243, 244)'
+            }}
+            onMouseMove={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="flex flex-col cursor-pointer pl-3 pt-3"
+        >
+            <div className="flex">
                 <div className="mr-3 w-10">
                     <img className="rounded-full w-10" src={avatar} alt="" />
                 </div>
@@ -39,8 +66,23 @@ const ContentPost: React.FC<ContentPostProps> = (
                     </div>
                 </div>
             </div>
-            <div className="px-16 my-3">
-                {/* <img src={} alt="" /> */}
+            <div className="flex justify-between w-full py-4 px-12">
+                <div className="flex items-center">
+                    <FaRegComment className="mr-2" />
+                    <span className="text-sm opacity-80 font-medium">{replies || 0}</span>
+                </div>
+                <div className="flex items-center">
+                    <BiRepost size={22} className="mr-2"/>
+                    <span className="text-sm opacity-80 font-medium">{reposts || 0}</span>
+                </div>
+                <div className="flex items-center">
+                    <AiOutlineHeart size={18} className="mr-2"/>
+                    <span className="text-sm opacity-80 font-medium">{likes || 0}</span>
+                </div>
+                <div className="flex items-center">
+                    <VscGraph  className="mr-2"/>
+                    <span className="text-sm opacity-80 font-medium">{views || 0} K</span>
+                </div>
             </div>
         </div>
      );
