@@ -3,6 +3,8 @@
 import { useParams, usePathname } from "next/navigation";
 import SearchInput from "./searchInput";
 import WhoToFollow from "./whoToFollow";
+import TrendsForYou from "./trendsForYou";
+import SidebarSearchFooter from "./sidebarSearchFooter";
 
 const SearchSidebar = () => {
 
@@ -17,10 +19,16 @@ const SearchSidebar = () => {
                 )}
             </div>
             <div>
+                {pathname !== '/explore' && (
+                    <TrendsForYou />
+                )}
+            </div>
+            <div>
                 {pathname !== `/profile/${params.username}` && (
                     <WhoToFollow />
                 )}
             </div>
+            <SidebarSearchFooter />
         </div>
      );
 }

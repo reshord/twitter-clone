@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, {useState} from "react";
 
 interface WhoToFollowItemProps {
     username: string
@@ -6,9 +8,23 @@ interface WhoToFollowItemProps {
     avatar?: string
 }
 
-const WhoToFollowItem: React.FC<WhoToFollowItemProps> = ({username, name, avatar}) => {
+const WhoToFollowItem: React.FC<WhoToFollowItemProps> = (
+    {
+        username, 
+        name, 
+        avatar
+    }
+    ) => {
+    
+    const [isHovered, setIsHovered] = useState<boolean>(false)
+
     return ( 
-        <div className="w-full h-10 flex items-center justify-between mt-4 cursor-pointer">
+        <div
+            onMouseMove={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={{backgroundColor: `${isHovered ? 'rgba(0,0,0,0.03)' : ''}`}}
+            className="w-full py-2 px-2 flex items-center justify-between cursor-pointer transition"
+         >
             <div className="flex items-center">
                 <div className="mr-2">
                     <img className="rounded-full w-10" src={avatar} alt="" />
@@ -18,7 +34,7 @@ const WhoToFollowItem: React.FC<WhoToFollowItemProps> = ({username, name, avatar
                     <span className="opacity-60">@{name}</span>
                 </div>
             </div>
-            <button className="text-white bg-black rounded-full py-1 px-3">Follow</button>
+            <button className="text-white bg-black rounded-full py-1 px-3 transition font-medium">Follow</button>
         </div>
      );
 }

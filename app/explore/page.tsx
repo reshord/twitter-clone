@@ -1,12 +1,13 @@
 import ExploreHeader from "../components/exploreHeader";
+import TrendsForYou from "../components/trendsForYou";
 
 const ExplorePage = () => {
     return ( 
-        <div className="w-2/5 mt-2">
+        <div className="w-2/5">
             <ExploreHeader/>
 
             <div>
-
+                <TrendsForYou />
             </div>
         </div>
      );

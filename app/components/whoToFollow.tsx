@@ -1,3 +1,5 @@
+'use client'
+import {useState} from 'react'
 import WhoToFollowItem from "./whoToFollorItem";
 
 const WhoToFollow = () => {
@@ -8,12 +10,15 @@ const WhoToFollow = () => {
         {name: 'TenHagBall_', username: 'Ten Hag\'\s Reds✍🏼🇳🇱', avatar: 'https://i.ibb.co/k1gqrjt/image.png'},
     ]
 
+    const [isHoveredButton, setIsHoveredButton] = useState<boolean>(false)
+
+
     return ( 
         <div 
-            className="mt-4 p-4 rounded-md" 
+            className="mt-4 rounded-lg" 
             style={{backgroundColor: 'rgb(239, 243, 244)'}}
         >
-            <div>
+            <div className="p-3">
                 <span className="font-bold text-xl">Who to follow</span>
             </div>
             <div className="flex flex-col">
@@ -26,8 +31,13 @@ const WhoToFollow = () => {
                 ))}
             </div>
             <button 
-                style={{color: 'rgb(29, 155, 240)'}} 
-                className="font-medium mt-5">
+                onMouseMove={() => setIsHoveredButton(true)}
+                onMouseLeave={() => setIsHoveredButton(false)}
+                style={{
+                    color: 'rgb(29, 155, 240)',
+                    backgroundColor: `${isHoveredButton ? 'rgba(0,0,0,0.03)' : ''}`
+                }} 
+                className="font-medium p-3 w-full text-start transition">
                     Show more
             </button>
         </div>
