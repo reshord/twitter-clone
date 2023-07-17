@@ -12,7 +12,7 @@ const ForMeContent = () => {
             createdAt: '30', 
             postTextContent: 'All eyes on the ball', 
             image: '',
-            comments: 9,
+            replies: 9,
             reposts: 24,
             likes: 120,
             view: 200
@@ -25,7 +25,7 @@ const ForMeContent = () => {
             createdAt: '40', 
             postTextContent: 'Great to have you back', 
             image: '',
-            comments: 19,
+            replies: 19,
             reposts: 44,
             likes: 40,
             view: 400
@@ -38,7 +38,7 @@ const ForMeContent = () => {
             createdAt: '50', 
             postTextContent: '🚨 West Ham are interested in signing Harry Maguire.', 
             image: '',
-            comments: 119,
+            replies: 119,
             reposts: 244,
             likes: 240,
             view: 3300
@@ -51,7 +51,7 @@ const ForMeContent = () => {
             createdAt: '36', 
             postTextContent: '🚨 Luton Town hope to get a thumbs up from #mufc to land goalkeeper Tom Heaton, who could be allowed to leave once United have added new signings in that department. [@SunSport]', 
             image: '',
-            comments: 129,
+            replies: 129,
             reposts: 244,
             likes: 430,
             view: 4400

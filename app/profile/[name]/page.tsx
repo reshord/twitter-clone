@@ -10,6 +10,9 @@ const ProfilePage = () => {
     return ( 
         <div className="w-2/5">
             <ProfileHeader />
+            <div>
+                
+            </div>
         </div>
      );
 }

@@ -24,7 +24,7 @@ const SearchSidebar = () => {
                 )}
             </div>
             <div>
-                {pathname !== `/profile/${params.username}` && (
+                {pathname !== `/profile/${params?.username}` && (
                     <WhoToFollow />
                 )}
             </div>
