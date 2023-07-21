@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const MyNewsInput = () => {
@@ -8,7 +9,8 @@ const MyNewsInput = () => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const myProfile = {
-        avatar: 'https://i.ibb.co/fDNyK87/image.png'
+        avatar: 'https://i.ibb.co/fDNyK87/image.png',
+        name: 'reshord0'
     }
 
     const sendTweet = () => {
@@ -29,7 +31,9 @@ const MyNewsInput = () => {
         >
             <div className="flex w-1/2" >
                 <div className="rounded-full mr-4">
-                    <img className="rounded-full w-10" src={myProfile.avatar} alt="" />
+                    <Link href={`/profile/${myProfile.name}`}>
+                        <img className="rounded-full w-10" src={myProfile.avatar} alt="" />
+                    </Link>
                 </div>
                 <input 
                     ref={inputRef}

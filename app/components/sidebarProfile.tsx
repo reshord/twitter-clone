@@ -1,4 +1,5 @@
 'use client'
+import Link from "next/link";
 import { useState } from "react";
 
 const SidebarProfile = () => {
@@ -12,20 +13,22 @@ const SidebarProfile = () => {
     }
 
     return ( 
-        <div 
-            onMouseMove={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            style={{backgroundColor: `${isHovered ? 'rgb(239, 243, 244)' : ''}`}}
-            className="flex items-center cursor-pointer py-2 px-4 rounded-full"
-        >
-            <div className="mr-3">
-                <img className="rounded-full w-10" src={myProfile.avatar} alt="" />
+        <Link href={`/profile/${myProfile.name}`}>
+            <div 
+                onMouseMove={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                style={{backgroundColor: `${isHovered ? 'rgb(239, 243, 244)' : ''}`}}
+                className="flex items-center cursor-pointer py-2 px-4 rounded-full"
+            >
+                <div className="mr-3">
+                    <img className="rounded-full w-10" src={myProfile.avatar} alt="" />
+                </div>
+                <div className="flex flex-col">
+                    <span className="font-bold">{myProfile.username}</span>
+                    <span className="opacity-80">@{myProfile.name}</span>
+                </div>
             </div>
-            <div className="flex flex-col">
-                <span className="font-bold">{myProfile.username}</span>
-                <span className="opacity-80">@{myProfile.name}</span>
-            </div>
-        </div>
+        </Link>
      );
 }
  

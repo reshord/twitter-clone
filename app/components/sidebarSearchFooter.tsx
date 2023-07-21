@@ -13,7 +13,7 @@ const SidebarSearchFooter = () => {
     return ( 
         <div className="flex flex-wrap mt-5 mb-14">
             {footerLinks.map(link => (
-                <Link className="hover:underline opacity-30 mr-2 text-sm" href={link.url}>{link.name}</Link>     
+                <Link className="hover:underline opacity-60 mr-2 text-sm" href={link.url}>{link.name}</Link>     
             ))}
         </div>
      );
