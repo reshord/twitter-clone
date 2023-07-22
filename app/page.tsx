@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Header from "./components/header";
 import ForMeContent from "./components/forMeContent";
+import FollowinContent from "./components/followingContent";
 
 export default function Home() {
 
@@ -22,7 +23,7 @@ export default function Home() {
               </div>
             ) : (
               <div>
-                follow
+                <FollowinContent />
               </div>
             )}
           </div>

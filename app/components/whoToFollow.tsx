@@ -22,8 +22,9 @@ const WhoToFollow = () => {
                 <span className="font-bold text-xl">Who to follow</span>
             </div>
             <div className="flex flex-col">
-                {whoToFollowSlices.map(item => (
+                {whoToFollowSlices.map((item, index) => (
                     <WhoToFollowItem 
+                        key={index}
                         name={item.name} 
                         username={item.username} 
                         avatar={item.avatar} 

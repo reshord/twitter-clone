@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import ContentPost from "./contentPost";
 import MyNewsInput from "./myNewsInput";
 
-const ForMeContent = () => {
+const FollowinContent = () => {
 
     const posts = [
         {
             postId: 1,
-            name: 'centredevils', 
-            username: 'centredevils.', 
-            avatar: 'https://i.ibb.co/3krfKQK/images.png', 
-            createdAt: '30', 
-            postTextContent: 'All eyes on the ball', 
+            name: 'UtdPlug', 
+            username: 'UtdPlug', 
+            avatar: 'https://i.ibb.co/yX9WMCZ/images.png', 
+            createdAt: '50', 
+            postTextContent: '🚨 West Ham are interested in signing Harry Maguire.', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -20,11 +20,11 @@ const ForMeContent = () => {
         },
         {
             postId: 2,
-            name: 'ManUtd', 
-            username: 'Manchester United', 
-            avatar: 'https://i.ibb.co/sv1z9KB/images.png', 
-            createdAt: '40', 
-            postTextContent: 'Great to have you back', 
+            name: 'UnitedRadar', 
+            username: 'United Radar', 
+            avatar: 'https://i.ibb.co/VJ9QhXQ/images.png', 
+            createdAt: '8', 
+            postTextContent: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"',
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -33,11 +33,11 @@ const ForMeContent = () => {
         },
         {
             postId: 3,
-            name: 'UtdPlug', 
-            username: 'UtdPlug', 
-            avatar: 'https://i.ibb.co/yX9WMCZ/images.png', 
-            createdAt: '50', 
-            postTextContent: '🚨 West Ham are interested in signing Harry Maguire.', 
+            name: 'centredevils', 
+            username: 'centredevils.', 
+            avatar: 'https://i.ibb.co/3krfKQK/images.png', 
+            createdAt: '30', 
+            postTextContent: 'All eyes on the ball', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -59,11 +59,11 @@ const ForMeContent = () => {
         },
         {
             postId: 5,
-            name: 'UnitedRadar', 
-            username: 'United Radar', 
-            avatar: 'https://i.ibb.co/VJ9QhXQ/images.png', 
-            createdAt: '8', 
-            postTextContent: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"',
+            name: 'ManUtd', 
+            username: 'Manchester United', 
+            avatar: 'https://i.ibb.co/sv1z9KB/images.png', 
+            createdAt: '40', 
+            postTextContent: 'Great to have you back', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -72,24 +72,14 @@ const ForMeContent = () => {
         },
     ]
 
-    const [allPosts, setAllPosts] = useState(posts)
-
-    const addNewPost = (post: any) => {
-        setAllPosts([post, ...allPosts])
-    }
-
-    useEffect(() => {
-
-    }, [posts.length]);
-
     return ( 
         <div className="flex flex-col">
-            <MyNewsInput addNewPost={(post) => addNewPost(post)} />
+            <MyNewsInput />
             <div 
                 className=" flex flex-col"
             >
-                {allPosts.map(post => (
-                    <ContentPost 
+                {posts.map(post => (
+                    <ContentPost
                         key={post.postId}
                         postId={post.postId}
                         name={post.name} 
@@ -109,4 +99,4 @@ const ForMeContent = () => {
      );
 }
  
-export default ForMeContent;
+export default FollowinContent;

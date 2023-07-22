@@ -22,14 +22,15 @@ const TrendsForYou = () => {
     return ( 
         <div 
             style={{backgroundColor: pathname === '/explore' ? '' : 'rgb(247, 249, 249)'}} 
-            className="w-full rounded-lg py-3 mt-4"
+            className="w-full rounded-lg mt-4 pt-3"
         >
             <span style={{marginLeft: ``}} className="text-2xl font-bold pl-4">
                 Trends for you
             </span>
             <div className="flex flex-col mt-2">
-                {trends.map(trend => (
+                {trends.map((trend, index) => (
                     <TrendsForYouItem 
+                        key={index}
                         category={trend.category} 
                         trendTitle={trend.trendTitle} 
                         tweetsCount={trend.tweetsCount}
@@ -37,7 +38,7 @@ const TrendsForYou = () => {
                 ))}
             </div>
             <button
-                className='p-3 w-full text-start' 
+                className='p-3 w-full text-start rounded-b-lg' 
                 onMouseMove={() => setIsHoveredButton(true)}
                 onMouseLeave={() => setIsHoveredButton(false)}
                 style={{

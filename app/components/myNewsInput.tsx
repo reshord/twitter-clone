@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-const MyNewsInput = () => {
+interface MyNewsInputProps {
+    addNewPost?: (post: any) => void
+}
+
+const MyNewsInput: React.FC<MyNewsInputProps> = ({addNewPost}) => {
 
     const [inputValue, setInputValue] = useState<string>('')
 
@@ -13,8 +17,24 @@ const MyNewsInput = () => {
         name: 'reshord0'
     }
 
-    const sendTweet = () => {
+    const handlePost = () => {
+        if(!addNewPost) return
 
+        const post = {
+            postId: 6,
+            name: myProfile.name,
+            username: myProfile.name,
+            avatar: myProfile.avatar,
+            images: '',
+            postTextContent: inputValue,
+            createdAt: new Date().getMinutes(),
+            repostsTweetIds: [],
+            viewsTweetIds: [],
+            repliesTweetIds: [],
+            likesTweetIds: []
+        }
+
+        addNewPost(post)
     }
 
     useEffect(() => {
@@ -47,8 +67,7 @@ const MyNewsInput = () => {
                 <button 
                     style={{backgroundColor: 'rgb(29, 155, 240)'}} 
                     className="py-1 px-4 rounded-full text-lg font-medium text-white cursor-pointer " 
-                    onClick={sendTweet}
-                    disabled={inputValue ? true : false}
+                    onClick={handlePost}
                 >
                         Tweet
                 </button>
