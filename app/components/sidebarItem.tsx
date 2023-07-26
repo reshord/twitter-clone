@@ -21,7 +21,6 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 
     const pathname = usePathname()
 
-    console.log(pathname)
 
     return ( 
         <Link href={url}>
