@@ -54,18 +54,18 @@ const ContentPost: React.FC<ContentPostProps> = (
         >
             <div className="flex">
                 <div className="mr-3 w-10">
-                    <Link href={`/profile/${name}`}>
+                    <Link href={`/profile/${username}`}>
                         <img className="rounded-full w-10" src={avatar} alt="" />
                     </Link>
                 </div>
                 <div className="flex flex-col w-4/5">
                     <div className="flex">
-                        <Link href={`/profile/${name}`} className="mr-3 font-bold hover:underline">{username}</Link>
-                        <Link href={`/profile/${name}`} className="mr-3 opacity-75">@{name}</Link>
+                        <Link href={`/profile/${username}`} className="mr-3 font-bold hover:underline">{name}</Link>
+                        <Link href={`/profile/${username}`} className="mr-3 opacity-75">@{username}</Link>
                         <span className="mr-3">·</span>
                         <span className="mr-3 opacity-75">{createdAt}m</span>
                     </div>
-                    <div className="w-full" onClick={() => router.push(`/${name}/status/${postId}`)} >
+                    <div className="w-full" onClick={() => router.push(`/${username}/status/${postId}`)} >
                         {postTextContent}
                     </div>
                 </div>

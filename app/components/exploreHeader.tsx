@@ -9,7 +9,7 @@ const ExploreHeader = () => {
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     return ( 
-        <div className='flex items-center sticky top-0 z-10 py-2 bg-white'>
+        <div className=''>
                 <div style={{backgroundColor: 'rgb(239, 243, 244)'}} className='flex w-full items-center py-2 px-4 rounded-full outline-slate-700'>
                     <AiOutlineSearch size={20} className='relative mr-2'/>
                     <input placeholder='Search Twitter' className='abosulte bg-transparent outline-none' type="text" />

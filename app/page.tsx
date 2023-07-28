@@ -3,6 +3,7 @@ import { useState } from "react";
 import Header from "./components/header";
 import ForMeContent from "./components/forMeContent";
 import FollowinContent from "./components/followingContent";
+import Head from "next/head";
 
 export default function Home() {
 

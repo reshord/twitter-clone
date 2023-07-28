@@ -7,8 +7,8 @@ const ForMeContent = () => {
     const posts = [
         {
             postId: 1,
-            name: 'centredevils', 
-            username: 'centredevils.', 
+            name: 'centredevils.', 
+            username: 'centredevils', 
             avatar: 'https://i.ibb.co/3krfKQK/images.png', 
             createdAt: '30', 
             postTextContent: 'All eyes on the ball', 
@@ -20,8 +20,8 @@ const ForMeContent = () => {
         },
         {
             postId: 2,
-            name: 'ManUtd', 
-            username: 'Manchester United', 
+            name: 'Manchester United', 
+            username: 'ManUtd', 
             avatar: 'https://i.ibb.co/sv1z9KB/images.png', 
             createdAt: '40', 
             postTextContent: 'Great to have you back', 
@@ -46,8 +46,8 @@ const ForMeContent = () => {
         },
         {
             postId: 4,
-            name: 'UnitedStandMUFC', 
-            username: 'The United Stand', 
+            name: 'The United Stand', 
+            username: 'UnitedStandMUFC', 
             avatar: 'https://i.ibb.co/vwbq4Sy/images.png', 
             createdAt: '36', 
             postTextContent: '🚨 Luton Town hope to get a thumbs up from #mufc to land goalkeeper Tom Heaton, who could be allowed to leave once United have added new signings in that department. [@SunSport]', 
@@ -59,8 +59,8 @@ const ForMeContent = () => {
         },
         {
             postId: 5,
-            name: 'UnitedRadar', 
-            username: 'United Radar', 
+            name: 'United Radar', 
+            username: 'UnitedRadar', 
             avatar: 'https://i.ibb.co/VJ9QhXQ/images.png', 
             createdAt: '8', 
             postTextContent: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"',
