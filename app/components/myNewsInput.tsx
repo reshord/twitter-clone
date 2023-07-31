@@ -14,7 +14,7 @@ const MyNewsInput: React.FC<MyNewsInputProps> = ({addNewPost}) => {
 
     const myProfile = {
         avatar: 'https://i.ibb.co/fDNyK87/image.png',
-        name: 'reshord0'
+        name: 'reshord'
     }
 
     const handlePost = () => {

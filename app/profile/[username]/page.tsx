@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import {RxCalendar} from 'react-icons/rx'
 import Head from "next/head";
+import Image from "next/image";
 
 const ProfilePage = () => {
 
@@ -30,45 +31,59 @@ const ProfilePage = () => {
     console.log(data)
 
     return ( 
-        <div className="w-3/6" style={{border: '1px solid rgb(239, 243, 244)'}}>
+        <div className="w-3/6" style={{border: '2px solid rgb(239, 243, 244)'}}>
             <ProfileHeader />
 
-            <div className="flex flex-col">
+            <div className="flex flex-col box-border" style={{borderBottom: '2px solid rgb(239, 243, 244)'}}>
                 <div 
                     style={{
-                        backgroundColor: `${!data.coverImage && 'rgb(207, 217, 222)'}`
+                        backgroundColor: `${!data.coverImage && 'rgb(207, 217, 222)'}`,
                     }} 
                     className="h-56"
                 >
-                    <img src={data.coverImage} alt="" />
+                    {/* <Image
+                        src={data.coverImage} 
+                        fill
+                        alt="Cover image" 
+                    /> */}
                 </div>
-                <div>
-                <div className="my-3 mx-5 relative bottom-24">
-                    <div 
-                        style={{
-                            backgroundColor: `${!data.profileImage && 'rgb(247, 249, 249)'}`, 
-                            border: '4px solid white'
-                        }} 
-                        className="w-32 h-32 rounded-full "
-                    >
-                        <img className="rounded-full cursor-pointer" src={data.profileImage} alt="" />
-                    </div>
-                    <div className="flex flex-col mt-3">
-                        <span className="font-bold text-2xl">{data?.name}</span>
-                        <span className="text-md text-neutral-500">@{data?.username}</span>
-                    </div>
-                    <div className="my-3">
-                        <span>{data.bio}</span>
-                    </div>
-                    <div className="flex items-center">
-                        <RxCalendar className="mr-2" />
-                        <span className="text-neutral-500">Joined March 2020</span>
+                <div className="mt-14 relative">
+                    <div className="my-3 mx-5">
+                        <div 
+                            style={{
+                                backgroundColor: `${!data.profileImage && 'rgb(247, 249, 249)'}`, 
+                                border: '4px solid white'
+                            }} 
+                            className="w-32 h-32 rounded-full absolute -top-28"
+                        >
+                            <img className="rounded-full cursor-pointer" src={data.profileImage} alt="" />
+                        </div>
+                        <div className="flex flex-col mt-8">
+                            <span className="font-bold text-2xl">{data?.name}</span>
+                            <span className="text-md text-neutral-500">@{data?.username}</span>
+                        </div>
+                        <div className="my-3">
+                            <span>{data.bio}</span>
+                        </div>
+                        <div className="flex items-center">
+                            <RxCalendar className="mr-2" />
+                            <span className="text-neutral-500">Joined March 2020</span>
+                        </div>
+                        <div className="flex flex-row my-3">
+                            <div className="mr-3">
+                                <span className="mr-2 font-bold">{0}</span>
+                                <span className="opacity-60 text-sm">Following</span>
+                            </div>
+                            <div>
+                                <span className="mr-2 font-bold">{6}</span>
+                                <span className="opacity-60 text-sm">Followers</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div>
-
-                </div>
-                </div>
+            </div>
+            <div>
+                content
             </div>
         </div>
      );
