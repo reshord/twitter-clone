@@ -1,11 +1,29 @@
 import useSwr from 'swr'
+import { fetcher } from './fetcher'
+import { IPost } from '../types/types'
 
-const fetcher = async (url: string) => await fetch(url).then(res => res.json())
+
+interface IUserData {
+    data: {
+        id: string
+        name: string
+        username: string
+        bio: string
+        email: string
+        image?: string
+        coverImage?: string
+        profileImage?: string
+        hashedPassword: string
+        followingIds?: string[]
+        createdAt: Date
+        updatedAt: Date
+        posts: IPost[]
+    },
+    isLoading: boolean
+}
 
 const useUser = (username: string | string[] | undefined) => {
-    const {data, isLoading} = useSwr(`/profile/${username}/api`, fetcher)
-
-    console.log(data)
+    const {data, isLoading}: IUserData = useSwr(`/profile/${username}/api/currentUser`, fetcher)
 
     return {
         data: data, 

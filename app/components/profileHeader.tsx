@@ -13,8 +13,6 @@ const ProfileHeader = ({title}: {title?: string}) => {
 
     const {data, isLoading} = useUser(params?.username)
 
-    console.log(data)
-
     return ( 
         <div 
             style={{

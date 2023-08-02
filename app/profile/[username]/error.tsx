@@ -9,7 +9,6 @@ export default function Error({error, reset}: {error: Error, reset: () => void})
     const params = useParams()
 
     useEffect(() => {
-        console.log('sdfsdf')
     }, [error])
 
     return (

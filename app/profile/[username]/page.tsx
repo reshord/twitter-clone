@@ -8,6 +8,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 import {RxCalendar} from 'react-icons/rx'
 import Head from "next/head";
 import Image from "next/image";
+import useFollowingUsers from "@/app/hooks/useFollowingUsers";
+import usePosts from "@/app/hooks/usePosts";
 
 const ProfilePage = () => {
 
@@ -16,6 +18,8 @@ const ProfilePage = () => {
     const params = useParams()
 
     const {data, isLoading} = useUser(params?.username)
+    const {data: postsData} = usePosts(params?.username)
+    // const {data: followindUsers} = useFollowingUsers(data?.followingIds)
 
 
     if(isLoading) {
@@ -71,7 +75,7 @@ const ProfilePage = () => {
                         </div>
                         <div className="flex flex-row my-3">
                             <div className="mr-3">
-                                <span className="mr-2 font-bold">{0}</span>
+                                <span className="mr-2 font-bold">{data.followingIds?.length || 0}</span>
                                 <span className="opacity-60 text-sm">Following</span>
                             </div>
                             <div>
@@ -83,7 +87,9 @@ const ProfilePage = () => {
                 </div>
             </div>
             <div>
-                content
+                {/* {postsData.map(post => (
+                    <div>{post.postBody}</div>
+                ))} */}
             </div>
         </div>
      );

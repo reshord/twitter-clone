@@ -5,7 +5,7 @@ export async function GET(req: Request, {params}: {params: {username: string}}) 
 
     const existingUser = await prisma.user.findUnique({
         where: {
-            username: params.username.toLowerCase()
+            username: params.username
         }
     })
 
