@@ -1,9 +1,12 @@
+'use client'
+
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import NavigationSidebar from './components/navigationSidebar'
 import SearchSidebar from './components/searchSidebar'
 import Head from 'next/head'
+import { SessionProvider } from 'next-auth/react'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -23,9 +26,11 @@ export default function RootLayout({
       <body className="">
         <div className="w-4/5 m-auto ">
           <div className='flex justify-between'>
-            <NavigationSidebar />
-              {children}
-            <SearchSidebar />
+            <SessionProvider>
+              <NavigationSidebar />
+                {children}
+              <SearchSidebar />
+            </SessionProvider>
           </div>
         </div>
       </body>

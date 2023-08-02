@@ -19,26 +19,25 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
 
-        // if(!credentials?.email || !credentials.password) {
-        //     throw new Error('invalid credentials')
-        // }
+        if(!credentials?.email || !credentials.password) {
+            throw new Error('invalid credentials')
+        }
         
-        // const user = await prisma.user.findUnique({
-        //     where: {
-        //         email: credentials.email
-        //     }
-        // })
+        const user = await prisma.user.findUnique({
+            where: {
+                email: credentials.email
+            }
+        })
 
-        // if(!user) {
-        //     throw new Error('invalid credentials')
-        // }
+        if(!user) {
+            throw new Error('invalid credentials')
+        }
 
-        // const isCorrectPassword = bcrypt.compare(credentials.password, user.hashedPassword)
+        const isCorrectPassword = bcrypt.compare(credentials.password, user.hashedPassword)
 
-        // if(!isCorrectPassword) {
-        //     throw new Error('invalid credentials')
-        // }
-        const user = { id: "1", name: "Admin", email: "admin@admin.com" };
+        if(!isCorrectPassword) {
+            throw new Error('invalid credentials')
+        }
 
         return user
 
