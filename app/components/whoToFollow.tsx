@@ -5,9 +5,9 @@ import WhoToFollowItem from "./whoToFollorItem";
 const WhoToFollow = () => {
 
     const whoToFollowSlices = [
-        {name: 'TenHagEra', username: 'Frank 🧠🇳🇱', avatar: 'https://i.ibb.co/LRZqDDH/image.png', userId: ''},
-        {name: 'utdreport', username: 'utdreport', avatar: 'https://i.ibb.co/MnKZwgy/image.png', userId: ''},
-        {name: 'TenHagBall_', username: 'Ten Hag\'\s Reds✍🏼🇳🇱', avatar: 'https://i.ibb.co/k1gqrjt/image.png', userId: ''},
+        {username: 'TenHagEra', name: 'Frank 🧠🇳🇱', avatar: 'https://i.ibb.co/LRZqDDH/image.png', userId: ''},
+        {username: 'utdreport', name: 'utdreport', avatar: 'https://i.ibb.co/MnKZwgy/image.png', userId: ''},
+        {username: 'TenHagBall_', name: 'Ten Hag\'\s Reds✍🏼🇳🇱', avatar: 'https://i.ibb.co/k1gqrjt/image.png', userId: ''},
     ]
 
     const [isHoveredButton, setIsHoveredButton] = useState<boolean>(false)

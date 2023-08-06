@@ -1,5 +1,5 @@
 import useSwr from 'swr'
-import { fetcher } from './fetcher'
+import { fetcher } from '../lib/fetcher'
 import { IPost } from '../types/types'
 
 
@@ -22,8 +22,8 @@ interface IUserData {
     isLoading: boolean
 }
 
-const useUser = (username: string | string[] | undefined) => {
-    const {data, isLoading}: IUserData = useSwr(`/profile/${username}/api/currentUser`, fetcher)
+const useCurrentProfile = (username: string | string[] | undefined) => {
+    const {data, isLoading}: IUserData = useSwr(`/profile/${username}/api/currentProfile`, fetcher)
 
     return {
         data: data, 
@@ -31,4 +31,4 @@ const useUser = (username: string | string[] | undefined) => {
     }
 }
 
-export default useUser
+export default useCurrentProfile

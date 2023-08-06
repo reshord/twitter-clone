@@ -2,7 +2,7 @@
 
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import {IoArrowBackOutline} from 'react-icons/io5'
-import useUser from '../hooks/useUser';
+import useUser from '../hooks/useCurrentProfile';
 
 
 const ProfileHeader = ({title}: {title?: string}) => {

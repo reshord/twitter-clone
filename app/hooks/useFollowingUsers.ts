@@ -1,4 +1,4 @@
-import { fetcher } from "./fetcher"
+import { fetcher } from "../lib/fetcher"
 import useSwr from 'swr'
 
 const useFollowingUsers = (username: string | string[] | undefined) => {

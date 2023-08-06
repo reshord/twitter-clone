@@ -8,10 +8,12 @@ const TweetPage = () => {
     const params = useParams()
 
     return ( 
-        <div className="w-2/5 py-3">
+        <div className="w-2/4">
             <ProfileHeader title={"Tweet"} />
             
-            {params?.postId}
+            <div>
+                {params?.postId}
+            </div>
         </div>
      );
 }

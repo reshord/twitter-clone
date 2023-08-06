@@ -1,7 +1,7 @@
 'use client'
 import ProfileHeader from "@/app/components/profileHeader";
 import SearchInput from "@/app/components/searchInput";
-import useUser from "@/app/hooks/useUser";
+import useUser from "@/app/hooks/useCurrentProfile";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -10,16 +10,14 @@ import Head from "next/head";
 import Image from "next/image";
 import useFollowingUsers from "@/app/hooks/useFollowingUsers";
 import usePosts from "@/app/hooks/usePosts";
+import useCurrentUser from "@/app/hooks/useCurrentUser";
 
 const ProfilePage = () => {
-
-    const [currentProfile, setCurrentProfile] = useState()
 
     const params = useParams()
 
     const {data, isLoading} = useUser(params?.username)
     const {data: postsData} = usePosts(params?.username)
-    // const {data: followindUsers} = useFollowingUsers(data?.followingIds)
 
 
     if(isLoading) {

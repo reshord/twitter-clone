@@ -13,22 +13,22 @@ const SearchSidebar = () => {
 
     return ( 
         <div className="color-white w-1/4 pt-2">
-            <div>
                 {pathname !== `/explore` && (
                     <SearchInput />
                 )}
-            </div>
-            <div>
-                {pathname !== '/explore' && (
-                    <TrendsForYou />
-                )}
-            </div>
-            <div>
-                {pathname !== `/profile/${params?.username}` && (
-                    <WhoToFollow />
-                )}
-            </div>
-            <SidebarSearchFooter />
+               <div>
+                    <div>
+                        {pathname !== '/explore' && (
+                            <TrendsForYou />
+                        )}
+                    </div>
+                    <div>
+                        {pathname !== `/profile/${params?.username}` && (
+                            <WhoToFollow />
+                        )}
+                    </div>
+                    <SidebarSearchFooter />
+               </div>
         </div>
      );
 }

@@ -3,8 +3,8 @@ import TrendsForYou from "../components/trendsForYou";
 
 const ExplorePage = () => {
     return ( 
-        <div className="w-2/5">
-            <ExploreHeader/>
+        <div className="w-2/4">
+                <ExploreHeader/>
 
             <div>
                 <TrendsForYou />

@@ -1,4 +1,4 @@
-import prismadb from '@/libs/prismadb'
+import prismadb from '@/app/lib/prismadb'
 
 export async function GET(req: Request, {params}: {params: {followingIds: string[]}}) {
     

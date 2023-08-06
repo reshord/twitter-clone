@@ -21,7 +21,6 @@ const TrendsForYou = () => {
 
     return ( 
         <div 
-            style={{backgroundColor: pathname === '/explore' ? '' : 'rgb(247, 249, 249)'}} 
             className="w-full rounded-lg mt-4 pt-3"
         >
             <span style={{marginLeft: ``}} className="text-2xl font-bold pl-4">
