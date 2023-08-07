@@ -1,5 +1,4 @@
 'use client'
-
 import { useParams, usePathname } from "next/navigation";
 import SearchInput from "./searchInput";
 import WhoToFollow from "./whoToFollow";

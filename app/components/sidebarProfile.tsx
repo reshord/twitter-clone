@@ -7,10 +7,10 @@ const SidebarProfile = () => {
 
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
-    const session = useSession().data?.user
+
 
     return ( 
-        <Link href={`/profile/${session?.name}`}>
+        <Link href={`/profile/$`}>
             <div 
                 onMouseMove={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}

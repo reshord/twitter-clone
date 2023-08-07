@@ -26,8 +26,10 @@ export default async function getCurrentUser() {
             return null
         }
 
+        const {hashedPassword, ...user} = currentUser
+
         return {
-            ...currentUser
+            ...user
         }
 
     }

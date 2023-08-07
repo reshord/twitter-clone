@@ -1,8 +1,6 @@
-
 'use client'
 import Image from 'next/image';
-import {BsTwitter} from 'react-icons/bs'
-import {BiHomeCircle, BiLogOut} from 'react-icons/bi'
+import {BiHomeCircle, BiLogOut, BiLogIn} from 'react-icons/bi'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {CgProfile} from 'react-icons/cg'
 import SidebarLogo from './sidebarLogo';
@@ -10,12 +8,10 @@ import SidebarItem from './sidebarItem';
 import TweetButton from './tweetButton';
 import SidebarProfile from './sidebarProfile';
 import {signIn, useSession} from 'next-auth/react'
-import {useRouter} from 'next/navigation'
-import { IconType } from 'react-icons/lib';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../lib/auth'
+import AuthButton from './authButton';
 
-const NavigationSidebar = () => {
+
+const NavigationSidebar = ({currentUser}: any) => {
 
     const sibarItems = [
         {
@@ -31,14 +27,8 @@ const NavigationSidebar = () => {
         {
             label: 'Profile',
             icon: CgProfile,
-            url: `/profile/${'reshord'}`
+            url: currentUser ? `/profile/${currentUser.username}` : '/sign-in'
         },
-        {
-            label: 'Logout',
-            icon: BiLogOut,
-            url: '/logout',
-        },
-       
     ]
 
     return ( 
@@ -50,8 +40,11 @@ const NavigationSidebar = () => {
                         <SidebarItem key={index} icon={item.icon} label={item.label} url={item.url}/>
                     ))}
                 </div>
-                <button onClick={() => signIn()}>sign in</button>
+
                 <TweetButton />
+
+                <AuthButton currentUser={currentUser} />
+
             </div>
             <SidebarProfile />
         </div>

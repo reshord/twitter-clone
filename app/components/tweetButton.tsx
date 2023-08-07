@@ -7,7 +7,7 @@ const TweetButton = () => {
 
     return ( 
         <button 
-            className="text-white rounded-3xl py-3 w-full font-bold " 
+            className="text-white rounded-3xl py-3 w-full font-bold mb-3" 
             style={{backgroundColor: 'rgb(29, 155, 240)'}} 
             onClick={activateModalTweet}
         >

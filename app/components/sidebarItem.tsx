@@ -1,6 +1,6 @@
 'use client'
 
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -24,7 +24,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 
 
     return ( 
-        <Link href={url}>
+        <Link href={url ? url : ''}>
             <div 
                 onMouseMove={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}

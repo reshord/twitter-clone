@@ -1,13 +1,12 @@
 'use client'
-
 import { useParams, usePathname, useRouter } from 'next/navigation';
 import {IoArrowBackOutline} from 'react-icons/io5'
 import useUser from '../hooks/useCurrentProfile';
+import ArrowBack from './arrowBack';
 
 
 const ProfileHeader = ({title}: {title?: string}) => {
 
-    const rounter = useRouter()
     const pathname = usePathname()
     const params = useParams()
 
@@ -23,9 +22,9 @@ const ProfileHeader = ({title}: {title?: string}) => {
             className="sticky top-0 z-10 py-2 px-3 bg-white cursor-pointer"
         >
             <div className='w-1/2 flex items-center'>
-                <div className='mr-9'>
-                    <IoArrowBackOutline onClick={() => rounter.back()} className='cursor-pointer' size={20} />
-                </div>
+
+                <ArrowBack />
+
                 {pathname === `/profile/${params?.username}` 
                     && data 
                     && (

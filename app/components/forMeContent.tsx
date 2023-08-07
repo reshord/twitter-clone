@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ContentPost from "./contentPost";
 import MyNewsInput from "./myNewsInput";
+import getCurrentUser from "../actions/getCurrentUser";
 
 const ForMeContent = () => {
 
@@ -71,6 +72,9 @@ const ForMeContent = () => {
             viewsTweetIds: []
         },
     ]
+
+   
+
 
     const [allPosts, setAllPosts] = useState(posts)
 
