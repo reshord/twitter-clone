@@ -32,21 +32,25 @@ const NavigationSidebar = ({currentUser}: any) => {
     ]
 
     return ( 
-        <div className='flex flex-col justify-between py-3 w-1/6'>
-            <div className='sticky top-3'>
-                <SidebarLogo />
-                <div className='my-6 '>
-                    {sibarItems.map((item, index) => (
-                        <SidebarItem key={index} icon={item.icon} label={item.label} url={item.url}/>
-                    ))}
+        <div className='flex flex-col justify-between w-1/6'>
+            <div className='sticky top-3 flex flex-col justify-between h-screen py-3'>
+                <div>
+                    <SidebarLogo />
+                    <div className='my-6 '>
+                        {sibarItems.map((item, index) => (
+                            <SidebarItem key={index} icon={item.icon} label={item.label} url={item.url}/>
+                        ))}
+                    </div>
+
+                    <TweetButton />
+
+                    <AuthButton currentUser={currentUser} />
                 </div>
 
-                <TweetButton />
-
-                <AuthButton currentUser={currentUser} />
-
+                <div>
+                    <SidebarProfile currentUser={currentUser} />
+                </div>
             </div>
-            <SidebarProfile />
         </div>
      );
 }

@@ -11,12 +11,16 @@ import useFollowingUsers from "@/app/hooks/useFollowingUsers";
 import usePosts from "@/app/hooks/usePosts";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getCurrentProfile from "@/app/actions/getCurrentProfile";
+import getUserPosts from "@/app/actions/getUserPosts";
+import ContentPost from "@/app/components/contentPost";
 
 const ProfilePage = async ({params}: {params: {username: string}}) => {
 
     const currentUser = await getCurrentUser()
 
     const currentProfile = await getCurrentProfile({params})
+
+    const currentUserPosts = await getUserPosts({params})
 
     if(!currentProfile) {
         return (
@@ -88,7 +92,7 @@ const ProfilePage = async ({params}: {params: {username: string}}) => {
                                 </button>
                             ) : (
                                 <button
-                                    style={{border: '2px solid rgb(239, 243, 244)'}} 
+                                    style={{border: '2px solid black'}} 
                                     className="font-bold py-1 px-6 rounded-full cursor-pointer mr-5"
                                 >
                                     Follow
@@ -100,9 +104,16 @@ const ProfilePage = async ({params}: {params: {username: string}}) => {
                 
             </div>
             <div>
-                {/* {postsData.map(post => (
-                    <div>{post.postBody}</div>
-                ))} */}
+                {currentUserPosts.map(post => (
+                    <ContentPost 
+                        profileImage={currentProfile.profileImage as string} 
+                        name={currentProfile.name as string} 
+                        username={currentProfile.username as string} 
+                        createdAt={post.createdAt} 
+                        postBody={post.postBody as string} 
+                        postId={post.id}
+                    />
+                ))}
             </div>
         </div>
      );

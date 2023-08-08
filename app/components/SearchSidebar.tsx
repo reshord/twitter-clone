@@ -5,7 +5,7 @@ import WhoToFollow from "./whoToFollow";
 import TrendsForYou from "./trendsForYou";
 import SidebarSearchFooter from "./sidebarSearchFooter";
 
-const SearchSidebar = () => {
+const SearchSidebar = ({currentUser}: any) => {
 
     const pathname = usePathname()
     const params = useParams()
@@ -15,19 +15,22 @@ const SearchSidebar = () => {
                 {pathname !== `/explore` && (
                     <SearchInput />
                 )}
-               <div>
+                {currentUser && (
                     <div>
-                        {pathname !== '/explore' && (
-                            <TrendsForYou />
-                        )}
+                        <div>
+                            {pathname !== '/explore' && (
+                                <TrendsForYou />
+                            )}
+                        </div>
+                        <div>
+                            {pathname !== `/profile/${params?.username}` && (
+                                <WhoToFollow />
+                            )}
+                        </div>
+                        <SidebarSearchFooter />
                     </div>
-                    <div>
-                        {pathname !== `/profile/${params?.username}` && (
-                            <WhoToFollow />
-                        )}
-                    </div>
-                    <SidebarSearchFooter />
-               </div>
+                )}
+               
         </div>
      );
 }

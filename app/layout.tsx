@@ -31,7 +31,7 @@ export default async function RootLayout({
           <div className='flex justify-between'>
               <NavigationSidebar currentUser={currentUser} />
                 {children}
-              <SearchSidebar />
+              <SearchSidebar currentUser={currentUser} />
           </div>
         </div>
       </body>

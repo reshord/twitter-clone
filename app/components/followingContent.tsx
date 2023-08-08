@@ -6,12 +6,12 @@ const FollowinContent = () => {
 
     const posts = [
         {
-            postId: 1,
+            postId: '1',
             name: 'UtdPlug', 
             username: 'UtdPlug', 
-            avatar: 'https://i.ibb.co/yX9WMCZ/images.png', 
-            createdAt: '50', 
-            postTextContent: '🚨 West Ham are interested in signing Harry Maguire.', 
+            profileImage: 'https://i.ibb.co/yX9WMCZ/images.png', 
+            createdAt: Date, 
+            postBody: '🚨 West Ham are interested in signing Harry Maguire.', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -19,12 +19,12 @@ const FollowinContent = () => {
             viewsTweetIds: []
         },
         {
-            postId: 2,
+            postId: '2',
             name: 'UnitedRadar', 
             username: 'United Radar', 
-            avatar: 'https://i.ibb.co/VJ9QhXQ/images.png', 
-            createdAt: '8', 
-            postTextContent: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"',
+            profileImage: 'https://i.ibb.co/VJ9QhXQ/images.png', 
+            createdAt: Date, 
+            postBody: 'Fabrizio Romano: "[R]elax with Onana. It’s just matter of formal things and small details. He’s joining Manchester United. 🧘🏼‍♂️"',
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -32,12 +32,12 @@ const FollowinContent = () => {
             viewsTweetIds: []
         },
         {
-            postId: 3,
+            postId: '3',
             name: 'centredevils', 
             username: 'centredevils.', 
-            avatar: 'https://i.ibb.co/3krfKQK/images.png', 
-            createdAt: '30', 
-            postTextContent: 'All eyes on the ball', 
+            profileImage: 'https://i.ibb.co/3krfKQK/images.png', 
+            createdAt: Date, 
+            postBody: 'All eyes on the ball', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -45,12 +45,12 @@ const FollowinContent = () => {
             viewsTweetIds: []
         },
         {
-            postId: 4,
+            postId: '4',
             name: 'UnitedStandMUFC', 
             username: 'The United Stand', 
-            avatar: 'https://i.ibb.co/vwbq4Sy/images.png', 
-            createdAt: '36', 
-            postTextContent: '🚨 Luton Town hope to get a thumbs up from #mufc to land goalkeeper Tom Heaton, who could be allowed to leave once United have added new signings in that department. [@SunSport]', 
+            profileImage: 'https://i.ibb.co/vwbq4Sy/images.png', 
+            createdAt: Date, 
+            postBody: '🚨 Luton Town hope to get a thumbs up from #mufc to land goalkeeper Tom Heaton, who could be allowed to leave once United have added new signings in that department. [@SunSport]', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -58,12 +58,12 @@ const FollowinContent = () => {
             viewsTweetIds: []
         },
         {
-            postId: 5,
+            postId: '5',
             name: 'ManUtd', 
             username: 'Manchester United', 
-            avatar: 'https://i.ibb.co/sv1z9KB/images.png', 
-            createdAt: '40', 
-            postTextContent: 'Great to have you back', 
+            profileImage: 'https://i.ibb.co/sv1z9KB/images.png', 
+            createdAt: Date, 
+            postBody: 'Great to have you back', 
             images: [],
             repostsTweetIds: [],
             repliesTweetIds: [],
@@ -84,10 +84,9 @@ const FollowinContent = () => {
                         postId={post.postId}
                         name={post.name} 
                         username={post.username} 
-                        avatar={post.avatar} 
+                        profileImage={post.profileImage} 
                         images={post.images} 
-                        postTextContent={post.postTextContent} 
-                        createdAt={post.createdAt}
+                        postBody={post.postBody} 
                         repostsTweetIds={post.repostsTweetIds}
                         viewsTweetIds={post.viewsTweetIds}
                         repliesTweetIds={post.repostsTweetIds}

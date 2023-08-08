@@ -1,40 +1,27 @@
+'use client'
+import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 
-interface MyNewsInputProps {
-    addNewPost?: (post: any) => void
-}
-
-const MyNewsInput: React.FC<MyNewsInputProps> = ({addNewPost}) => {
+const MyNewsInput = ({currentUser}: any) => {
 
     const [inputValue, setInputValue] = useState<string>('')
 
     const inputBlockRef = useRef<HTMLInputElement>(null)
     const inputRef = useRef<HTMLInputElement>(null)
 
-    const myProfile = {
-        avatar: 'https://i.ibb.co/fDNyK87/image.png',
-        name: 'reshord'
-    }
-
-    const handlePost = () => {
-        if(!addNewPost) return
-
-        const post = {
-            postId: 6,
-            name: myProfile.name,
-            username: myProfile.name,
-            avatar: myProfile.avatar,
-            images: '',
-            postTextContent: inputValue,
-            createdAt: new Date().getMinutes(),
-            repostsTweetIds: [],
-            viewsTweetIds: [],
-            repliesTweetIds: [],
-            likesTweetIds: []
+    const handlePost = async () => {
+        try {
+            await fetch('/api/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    postBody: 'hello im reshord'
+                })
+            })
         }
+        catch(e) {
 
-        addNewPost(post)
+        }
     }
 
     useEffect(() => {
@@ -51,8 +38,8 @@ const MyNewsInput: React.FC<MyNewsInputProps> = ({addNewPost}) => {
         >
             <div className="flex w-1/2" >
                 <div className="rounded-full mr-4">
-                    <Link href={`/profile/${myProfile.name}`}>
-                        <img className="rounded-full w-10" src={myProfile.avatar} alt="" />
+                    <Link href={`/profile/${currentUser?.username}`}>
+                        <img className="rounded-full w-10" src={currentUser?.profileImage || '/placeholder.png'} alt="" />
                     </Link>
                 </div>
                 <input 
